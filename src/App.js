@@ -7,7 +7,7 @@ import Additem from "./Additem";
 
 export default function App() {
   const [listItems, setItems] = useState(
-    JSON.parse(localStorage.getItem("todolist"))
+    JSON.parse(localStorage.getItem("todolist")) || []
   );
 
   const handelCheck = (id) => {
@@ -52,7 +52,6 @@ export default function App() {
         handelSubmit={handelSubmit}
       />
       <Content
-        listItemid={listItems.id}
         listItems={listItems}
         handelCheck={handelCheck}
         handelDelete={handelDelete}

@@ -5,7 +5,6 @@ const Content = function ({ listItems, handelCheck, handelDelete }) {
     <div className="content-sec">
       {listItems.length ? (
         <ContentList
-          listItemid={listItems.id}
           listItems={listItems}
           handelCheck={handelCheck}
           handelDelete={handelDelete}
