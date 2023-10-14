@@ -1,6 +1,6 @@
 import React from "react";
 import { MdDelete } from "react-icons/md";
-
+/*git changes*/
 const ContentList = function ({ listItems, handelCheck, handelDelete }) {
   return (
     <ul>
