@@ -1,25 +1,63 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Header from "./Header";
+import Content from "./content";
+import Fotter from "./Fotter";
+import { useState } from "react";
+import Additem from "./Additem";
 
-function App() {
+export default function App() {
+  const [listItems, setItems] = useState(
+    JSON.parse(localStorage.getItem("todolist"))
+  );
+
+  const handelCheck = (id) => {
+    const listItem = listItems.map((listItems) =>
+      listItems.id === id
+        ? { ...listItems, checked: !listItems.checked }
+        : listItems
+    );
+    setItems(listItem);
+    localStorage.setItem("todolist", JSON.stringify(listItem));
+  };
+
+  const handelDelete = (id) => {
+    const listItem = listItems.filter((listItems) => listItems.id !== id);
+    setItems(listItem);
+    localStorage.setItem("todolist", JSON.stringify(listItem));
+  };
+
+  const [newItems, setNewItem] = useState("");
+
+  const addItem = (Item) => {
+    const id = listItems.length ? listItems[listItems.length - 1].id + 1 : 1;
+    const addNewItem = { id, checked: false, todo: Item }; // Use "todo" instead of "Item"
+    const listItem = [...listItems, addNewItem];
+    setItems(listItem);
+    localStorage.setItem("todolist", JSON.stringify(listItem));
+  };
+
+  const handelSubmit = (e) => {
+    e.preventDefault();
+    if (!newItems) console.log("submited");
+    addItem(newItems);
+    setNewItem("");
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section className="main-screen">
+      <Header />
+      <Additem
+        newItems={newItems}
+        setNewItem={setNewItem}
+        handelSubmit={handelSubmit}
+      />
+      <Content
+        listItemid={listItems.id}
+        listItems={listItems}
+        handelCheck={handelCheck}
+        handelDelete={handelDelete}
+      />
+      <Fotter length={listItems.length} />
+    </section>
   );
 }
-
-export default App;
