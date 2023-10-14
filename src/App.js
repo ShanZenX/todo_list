@@ -45,18 +45,20 @@ export default function App() {
 
   return (
     <section className="main-screen">
-      <Header />
-      <Additem
-        newItems={newItems}
-        setNewItem={setNewItem}
-        handelSubmit={handelSubmit}
-      />
-      <Content
-        listItems={listItems}
-        handelCheck={handelCheck}
-        handelDelete={handelDelete}
-      />
-      <Fotter length={listItems.length} />
+      <div className="sec-module">
+        <Header />
+        <Additem
+          newItems={newItems}
+          setNewItem={setNewItem}
+          handelSubmit={handelSubmit}
+        />
+        <Content
+          listItems={listItems}
+          handelCheck={handelCheck}
+          handelDelete={handelDelete}
+        />
+        <Fotter length={listItems.length} />
+      </div>
     </section>
   );
 }
