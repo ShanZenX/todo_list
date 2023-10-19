@@ -20,10 +20,10 @@ code {
 .header {
   margin: 20px 10px 10px 10px;
   font-family: 'Jost', sans-serif;
-
+  font-size: 20px;
   background-color: teal;
   height: 80px;
-  color: black;
+  color: rgb(255, 255, 255);
   align-items: center;
   font-weight: 600;
   justify-content: center;
@@ -35,6 +35,12 @@ code {
 
 
 
+}
+
+@media only screen and (max-width: 600px) {
+  .header {
+    width: 300px;
+  }
 }
 
 
@@ -69,6 +75,14 @@ code {
   background-color: rgb(255, 255, 255);
   box-shadow: rgba(188, 188, 189, 0.2) 0px 7px 29px 0px;
   border-radius: 10px;
+  margin: 40px 0px 40px 0px;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .sec-module {
+    width: 350px;
+  }
 }
 
 /* content-sec */
@@ -84,12 +98,19 @@ ul {
   padding: 0%;
   margin: 0px;
   width: 400px;
+
+}
+
+@media only screen and (max-width: 600px) {
+  ul {
+    width: 300px;
+  }
 }
 
 .list-items {
 
   border-radius: 5px;
-  background-color: #ddd8d8;
+  background-color: darkgray;
   margin-bottom: 20px;
   list-style: none;
   display: flex;
@@ -137,15 +158,21 @@ ul {
 
 /* fotter */
 .fotter {
+
   margin: 10px 10px 20px 10px;
   font-family: 'Jost', sans-serif;
   border-radius: 4px;
   display: grid;
   justify-content: center;
-  align-items: center;
+  text-align: center;
   height: 80px;
   background-color: teal;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+}
+
+.fotter h2 {
+  font-size: 30px;
+  margin: auto;
 }
 
 /* :empty */
@@ -171,6 +198,14 @@ ul {
   width: 40px;
   height: 40px;
   cursor: pointer;
+  border-radius: 10%;
+  transition: 0.9s;
+
+
+}
+
+.addbutton-img:hover {
+  transform: scale(1.1);
 }
 
 .add_form {

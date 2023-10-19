@@ -2,13 +2,17 @@ import "./App.css";
 import Header from "./Header";
 import Content from "./content";
 import Fotter from "./Fotter";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Additem from "./Additem";
 
 export default function App() {
   const [listItems, setItems] = useState(
-    JSON.parse(localStorage.getItem("todolist")) || []
+    JSON.parse(localStorage.getItem("toso_list")) || []
   );
+
+  useEffect(() => {
+    localStorage.setItem("toso_list", JSON.stringify(listItems));
+  }, [listItems]);
 
   const handelCheck = (id) => {
     const listItem = listItems.map((listItems) =>
@@ -17,23 +21,20 @@ export default function App() {
         : listItems
     );
     setItems(listItem);
-    localStorage.setItem("todolist", JSON.stringify(listItem));
   };
 
   const handelDelete = (id) => {
     const listItem = listItems.filter((listItems) => listItems.id !== id);
     setItems(listItem);
-    localStorage.setItem("todolist", JSON.stringify(listItem));
   };
 
   const [newItems, setNewItem] = useState("");
 
   const addItem = (Item) => {
     const id = listItems.length ? listItems[listItems.length - 1].id + 1 : 1;
-    const addNewItem = { id, checked: false, todo: Item }; // Use "todo" instead of "Item"
+    const addNewItem = { id, checked: false, todo: Item };
     const listItem = [...listItems, addNewItem];
     setItems(listItem);
-    localStorage.setItem("todolist", JSON.stringify(listItem));
   };
 
   const handelSubmit = (e) => {
