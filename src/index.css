@@ -28,7 +28,7 @@ code {
   font-weight: 600;
   justify-content: center;
   display: flex;
-  width: 400px;
+  /* width: 400px; */
   border-radius: 4px;
 
   /* margin-top: 50px; */
