@@ -39,7 +39,7 @@ code {
 
 @media only screen and (max-width: 600px) {
   .header {
-    width: 350px;
+    width: 300px;
   }
 }
 
@@ -103,7 +103,7 @@ ul {
 
 @media only screen and (max-width: 600px) {
   ul {
-    width: 350px;
+    width: 300px;
   }
 }
 
