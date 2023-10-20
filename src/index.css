@@ -37,7 +37,7 @@ code {
 
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 576px) {
   .header {
     width: 300px;
   }
@@ -79,7 +79,7 @@ code {
 }
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 576px) {
   .sec-module {
     width: 350px;
   }
@@ -97,15 +97,15 @@ code {
 ul {
   padding: 0%;
   margin: 0px;
-  width: 400px;
+  /* width: 400px; */
 
 }
 
-@media only screen and (max-width: 600px) {
+/* @media only screen and (max-width: 600px) {
   ul {
     width: 300px;
   }
-}
+} */
 
 .list-items {
 
