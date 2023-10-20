@@ -37,11 +37,11 @@ code {
 
 }
 
-/* @media only screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {
   .header {
-    width: 300px;
+    width: 325px;
   }
-} */
+}
 
 
 /* @media only screen and (max-width: 600px) {
