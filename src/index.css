@@ -37,11 +37,11 @@ code {
 
 }
 
-@media only screen and (max-width: 576px) {
+/* @media only screen and (max-width: 576px) {
   .header {
     width: 300px;
   }
-}
+} */
 
 
 /* @media only screen and (max-width: 600px) {
@@ -66,16 +66,17 @@ code {
 .sec-module {
   /* background-image: url("../public/todo-back-img.avif"); */
   background-repeat: no-repeat;
-  display: grid;
+  display: flex;
+  flex-direction: column;
+
   height: auto;
   justify-content: center;
-  align-items: center;
-  /* width: 450px; */
+  width: 400px;
   min-height: 500px;
   background-color: rgb(255, 255, 255);
   box-shadow: rgba(188, 188, 189, 0.2) 0px 7px 29px 0px;
   border-radius: 10px;
-  margin: 40px 0px 40px 0px;
+  margin: 40px 20px 40px 20px;
 }
 
 
